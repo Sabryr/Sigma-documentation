@@ -1,0 +1,316 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Memory and number of cores &mdash; Sigma2 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/sigma2.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Sigma2/Metacenter documentation
+          
+
+          
+            
+            <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">News</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://opslog.sigma2.no">Latest changes and events</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.sigma2.no/hardware-status">Hardware live status</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Getting help</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_help/support_line.html">Support line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_help/how_to_write_good_support_requests.html">Writing good support requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_help/qa-sessions.html">Open Question &amp; Answer Sessions for All Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_help/lost_forgotten_password.html">Lost or expiring password</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_help/project_leader_support.html">Project leader support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_help/advanced_user_support.html">Advanced User Support (AUS)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/applying_account.html">How do I get an HPC account?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/applying_resources.html">Applying for computing and storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/training.html">Training material</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/editing_files.html">Editing files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/create_ssh_keys.html">SSH</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../nird_archive/user-guide.html">Research data archive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../nird_toolkit/overview.html">NIRD Toolkit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../services/easydmp-user-documentation.html">EasyDMP User Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_help/course_resources.html">CRaaS - Course Resources as a Service</a></li>
+</ul>
+<p class="caption"><span class="caption-text">High-performance computing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc_machines/hardware_overview.html">Overview over our machines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc_machines/betzy.html">Betzy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc_machines/fram.html">Fram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc_machines/saga.html">Saga</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://hpc-uit.readthedocs.io">Stallo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc_machines/migration2metacenter.html">Migration to a Metacenter HPC machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/overview.html">Job types and job scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../code_development/overview.html">Code development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../computing/tuning-applications.html">Tuning applications</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modulescheme.html">Software Module Scheme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installed_software.html">Installed Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../userinstallsw.html">Installing software as user</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../containers.html">Running Singularity and Docker containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appguides.html">Application guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../licenses.html">Licenses and access policies</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Files and Storage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../files_storage/nird.html">NIRD - National Infrastructure for Research Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files_storage/clusters.html">Storage areas on HPC clusters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files_storage/backup.html">Backup on Betzy, Fram, Saga, and NIRD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files_storage/sharing_files.html">Data handling and storage policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files_storage/file_transfer.html">File transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files_storage/performance.html">Storage performance tuning</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Sigma2/Metacenter documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Memory and number of cores</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/UNINETTSigma2/documentation/blob/master/software/application_guides/gaussian/gaussian_resources.md" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="memory-and-number-of-cores">
+<h1>Memory and number of cores<a class="headerlink" href="#memory-and-number-of-cores" title="Permalink to this headline">¶</a></h1>
+<p>This page contains info about special features related to the Gaussian install made on Sigma2 machines, but also general issues related to Gaussian only vaguely documented elsewhere.</p>
+<div class="section" id="gaussian-over-infiniband">
+<h2>Gaussian over Infiniband<a class="headerlink" href="#gaussian-over-infiniband" title="Permalink to this headline">¶</a></h2>
+<p>First note that the Gaussian installation on Sigma2 machines, are currently Linda parallel versions, so they scale somewhat initially. On top of this, our Gaussian is installed with a little trick, where the loading of the executable is intercepted before launch, and an alternative socket library is loaded. This enables running Gaussian natively on the Infiniband network giving us two advantages:</p>
+<ul class="simple">
+<li><p>The parallel fraction of the code scales to more cores.</p></li>
+<li><p>The shared memory performance is significantly enhanced (small scale performance).</p></li>
+</ul>
+<p>But since we do this trick, we are greatly depending on altering the specific node address into the input file: To run gaussian in parallel requires the additional keywords <code class="docutils literal notranslate"><span class="pre">%LindaWorkers</span></code> and <code class="docutils literal notranslate"><span class="pre">%NProcshared</span></code> in the Link 0 part of the input file. This is taken care of by a wrapper script (<em><strong>gXX.ib</strong></em>) around the original binary in each individual version folder. This is also commented in the <a class="reference internal" href="gaussian_job_example.html"><span class="doc std std-doc">jobscript example</span></a>. Please use this example(s) as starting point(s) when submitting jobs.</p>
+<p>Syntax is shown here:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>g16.ib $input.com &gt; g16_$input.out
+</pre></div>
+</div>
+<p>We have also taken care of the rsh/ssh setup in our installation procedure, to avoid <code class="docutils literal notranslate"><span class="pre">.tsnet.config</span></code> dependency for users.</p>
+</div>
+<div class="section" id="parallel-scaling">
+<h2>Parallel scaling<a class="headerlink" href="#parallel-scaling" title="Permalink to this headline">¶</a></h2>
+<p>Gaussian is a rather large program system with a range of different binaries, and users need to verify whether the functionality they use is parallelized and how it scales.</p>
+<p>Due to the preload Infiniband trick, we have a somewhat more generous policy when it comes to allocating cores/nodes to Gaussian jobs but before computing a table of different functionals and molecules, we strongly advice users to first study the scaling of the code for a representative system.</p>
+<p>Please do not reuse scripts inherited from others without studying the performance and scaling of your job. If you need assistance with this, please contact user support!</p>
+<p>We do advice people to use up to 256 cores (<code class="docutils literal notranslate"><span class="pre">--tasks</span></code>). We have observed acceptable scaling of the current Gaussian install beyond this count of cores/nodes for the jobs that do scale outside of one node (i.e. the binaries in the <code class="docutils literal notranslate"><span class="pre">$gXXroot/linda-exe</span></code> folder). But, Linda networking overhead seems to hit hard around this amount of cores, causing us to be somewhat reluctant to advice going beyond this until further notice.</p>
+<p>Gaussian takes care of memory allocation internally. This means that if the submitted job needs more memory per core than what is in average available on the node, it will automatically scale down the number of cores to mirror the need. This also means that you always should ask for full nodes when submitting Gaussian jobs! This is taken care of by the <code class="docutils literal notranslate"><span class="pre">--exclusive</span></code>in flag SLURM, and also commented in the job script example.</p>
+<p><strong>The <code class="docutils literal notranslate"><span class="pre">%mem</span></code> allocation of memory in the Gaussian input file means two things:</strong></p>
+<ul class="simple">
+<li><p>In general it means memory/node – for share between nprocshared, and additional to the memory allocated per process. This is also documented by Gaussian.</p></li>
+<li><p>For the main process/node it also represents the network buffer allocated by Linda since the main Gaussian process takes a part and Linda communication process takes a part equally sized – thus you should never ask for more than half of the physical memory on the nodes, unless they have swap space available - which you never should assume.</p></li>
+</ul>
+<p>Please consider the memory size in your input if jobs fail. Our job example is set up with 500MB (which is actually a bit on the small side), test-jobs were ran with 2000MB. Memory demand also increases with an increasing number of cores, for jobs with 16 nodes or more - doubling the amount of <code class="docutils literal notranslate"><span class="pre">%mem</span></code> would be advicable. But this would also limit the size of problems possible to run at a certain number of cores.</p>
+<p><span style="color:violet"> To top this, the <code class="docutils literal notranslate"><span class="pre">%mem</span></code> tag is also influencing on performance; too high makes the job go slower, too low makes the job fail.</span></p>
+<p>The maximum <code class="docutils literal notranslate"><span class="pre">%mem</span></code> limit will always be half of the physical memory pool given on a node. As a rule of thumb, you should also leave a small part for the system. That is why we would actually advise to use not more than 15GB as maximum <code class="docutils literal notranslate"><span class="pre">%mem</span></code> size. <strong>Note that “heap size” is also eating from the memory pool of the node (see below).</strong></p>
+</div>
+<div class="section" id="managment-of-large-files">
+<h2>Managment of large files<a class="headerlink" href="#managment-of-large-files" title="Permalink to this headline">¶</a></h2>
+<p>As commented in the <a class="reference internal" href="../../../files_storage/performance/lustre.html"><span class="doc std std-doc">performance-tips section</span></a>, there is an issue with very large temporary output files (termed RW files in Gaussian). It is advisable to slice them into smaller parts using the <code class="docutils literal notranslate"><span class="pre">lfs</span> <span class="pre">setstripe</span></code> command.</p>
+<p>On Stallo, each user can change the default placement of the files it creates by striping files over several storage arrays, pr. folder basis (on Saga, file striping cannot be reconfigured by the user).
+This is done with the following command:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>lfs setstripe -c 8 ${GAUSS_SCRDIR}
+</pre></div>
+</div>
+<p>Note the placement of this command in the <a class="reference internal" href="gaussian_job_example.html"><span class="doc std std-doc">jobscript example</span></a>. It is paramount that this commands comes after defining that variable and creating the corresponding folder.</p>
+</div>
+<div class="section" id="important-aspects-of-gaussian-setup-on-fram">
+<h2>Important aspects of Gaussian setup on Fram:<a class="headerlink" href="#important-aspects-of-gaussian-setup-on-fram" title="Permalink to this headline">¶</a></h2>
+<p>On Fram, we have not allocated swap space on the nodes, meaning that the heap size for the linda processes in Gaussian is very important for making parallell jobs run. The line</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>export GAUSS_LFLAGS2=&quot;--LindaOptions -s 20000000&quot;
+</pre></div>
+</div>
+<p>contains info about the heap size for the linda communication of Gaussian. <span style="color:violet"> 20 GB (the number above) is sufficient for most calculations, but if you plan to run 16 nodes or more, you may need to increase this number to at least 30 GB.</span></p>
+<p>On Fram, the gXX.ib wrapper does two things: Together with introducing the  explicit IB network adresses into input file, it distributes the jobs onto two linda processes per node and halves the processes per linda compared to processes per node. After thorough testing, we would generally advice users to run 4-8 nodes with heap-size 20 GB (see above) and 2 Linda instances per node for running Gaussian on Fram. Note that due to the “two-Lindas-per-node” policy, memory demand is approximately the double as similar jobs on Stallo.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, Sigma2/Metacenter.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

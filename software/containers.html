@@ -1,0 +1,477 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Running Singularity and Docker containers &mdash; Sigma2 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/sigma2.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Application guides" href="appguides.html" />
+    <link rel="prev" title="Installing Python packages" href="userinstallsw/python.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Sigma2/Metacenter documentation
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">News</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://opslog.sigma2.no">Latest changes and events</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.sigma2.no/hardware-status">Hardware live status</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Getting help</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_help/support_line.html">Support line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_help/how_to_write_good_support_requests.html">Writing good support requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_help/qa-sessions.html">Open Question &amp; Answer Sessions for All Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_help/lost_forgotten_password.html">Lost or expiring password</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_help/project_leader_support.html">Project leader support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_help/advanced_user_support.html">Advanced User Support (AUS)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/applying_account.html">How do I get an HPC account?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/applying_resources.html">Applying for computing and storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/training.html">Training material</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/editing_files.html">Editing files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/create_ssh_keys.html">SSH</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../nird_archive/user-guide.html">Research data archive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nird_toolkit/overview.html">NIRD Toolkit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../services/easydmp-user-documentation.html">EasyDMP User Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_help/course_resources.html">CRaaS - Course Resources as a Service</a></li>
+</ul>
+<p class="caption"><span class="caption-text">High-performance computing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../hpc_machines/hardware_overview.html">Overview over our machines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc_machines/betzy.html">Betzy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc_machines/fram.html">Fram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc_machines/saga.html">Saga</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://hpc-uit.readthedocs.io">Stallo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc_machines/migration2metacenter.html">Migration to a Metacenter HPC machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/overview.html">Job types and job scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code_development/overview.html">Code development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../computing/tuning-applications.html">Tuning applications</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Software</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="modulescheme.html">Software Module Scheme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installed_software.html">Installed Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userinstallsw.html">Installing software as user</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Running Singularity and Docker containers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#simple-example-to-get-started">Simple example to get started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fetching-images-from-the-web">Fetching images from the web</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mpi-example">MPI example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-singularity-container-from-a-definition-file">Creating a Singularity container from a definition file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-the-container-on-multiple-nodes">Running the container on multiple nodes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="appguides.html">Application guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="licenses.html">Licenses and access policies</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Files and Storage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../files_storage/nird.html">NIRD - National Infrastructure for Research Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../files_storage/clusters.html">Storage areas on HPC clusters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../files_storage/backup.html">Backup on Betzy, Fram, Saga, and NIRD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../files_storage/sharing_files.html">Data handling and storage policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../files_storage/file_transfer.html">File transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../files_storage/performance.html">Storage performance tuning</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Sigma2/Metacenter documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Running Singularity and Docker containers</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/UNINETTSigma2/documentation/blob/master/software/containers.md" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="running-singularity-and-docker-containers">
+<h1>Running Singularity and Docker containers<a class="headerlink" href="#running-singularity-and-docker-containers" title="Permalink to this headline">¶</a></h1>
+<p>It is now possible to run Singularity containers on Saga, Fram, and Betzy.</p>
+<p>This gives the users enormous flexibility to bring a full software stack
+already set up to the cluster. This can make software installations and
+dependencies more reproducible and more portable across clusters.</p>
+<p>And since Singularity can build containers from Docker images, it is also
+possible to run Docker images through Singularity and we will show you how.</p>
+<div class="section" id="simple-example-to-get-started">
+<h2>Simple example to get started<a class="headerlink" href="#simple-example-to-get-started" title="Permalink to this headline">¶</a></h2>
+<p>First we pull a “hello world” Singularity image from https://singularity-hub.org/:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ singularity pull --name hello-world.sif shub://vsoch/hello-world
+</pre></div>
+</div>
+<p>We do the <code class="docutils literal notranslate"><span class="pre">singularity</span> <span class="pre">pull</span></code> step on the login node. We cannot do this step inside a job
+script because compute nodes cannot access the web.</p>
+<p>Once we have the <code class="docutils literal notranslate"><span class="pre">hello-world.sif</span></code> file, we can test it out with the following
+job script on Saga (adjust “myaccount”; on Fram/Betzy you will need to remove
+the line containing <code class="docutils literal notranslate"><span class="pre">#SBATCH</span> <span class="pre">--mem-per-cpu=1000M</span></code> but the rest should work as
+is):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --account=myaccount</span>
+<span class="c1">#SBATCH --job-name=singularity-test</span>
+<span class="c1">#SBATCH --nodes=1</span>
+<span class="c1">#SBATCH --ntasks-per-node=1</span>
+<span class="c1">#SBATCH --mem-per-cpu=1000M</span>
+<span class="c1">#SBATCH --time=00:03:00</span>
+
+<span class="nb">echo</span>
+<span class="nb">echo</span> <span class="s2">&quot;check that we can read the current directory from the container:&quot;</span>
+singularity <span class="nb">exec</span> hello-world.sif ls
+
+<span class="nb">echo</span>
+<span class="nb">echo</span> <span class="s2">&quot;what is the operationg system on the host?&quot;</span>
+cat /etc/os-release
+
+<span class="nb">echo</span>
+<span class="nb">echo</span> <span class="s2">&quot;what is the operationg system on the container?&quot;</span>
+singularity <span class="nb">exec</span> hello-world.sif cat /etc/os-release
+</pre></div>
+</div>
+<p>This produces the following output. Notice how on the container we are on a
+Ubuntu operating system:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>check that we can read the current directory from the container:
+hello-world.sif
+run.sh
+slurm-1119935.out
+
+what is the operationg system on the host?
+NAME=&quot;CentOS Linux&quot;
+VERSION=&quot;7 (Core)&quot;
+ID=&quot;centos&quot;
+ID_LIKE=&quot;rhel fedora&quot;
+VERSION_ID=&quot;7&quot;
+PRETTY_NAME=&quot;CentOS Linux 7 (Core)&quot;
+ANSI_COLOR=&quot;0;31&quot;
+CPE_NAME=&quot;cpe:/o:centos:centos:7&quot;
+HOME_URL=&quot;https://www.centos.org/&quot;
+BUG_REPORT_URL=&quot;https://bugs.centos.org/&quot;
+
+CENTOS_MANTISBT_PROJECT=&quot;CentOS-7&quot;
+CENTOS_MANTISBT_PROJECT_VERSION=&quot;7&quot;
+REDHAT_SUPPORT_PRODUCT=&quot;centos&quot;
+REDHAT_SUPPORT_PRODUCT_VERSION=&quot;7&quot;
+
+what is the operationg system on the container?
+NAME=&quot;Ubuntu&quot;
+VERSION=&quot;14.04.6 LTS, Trusty Tahr&quot;
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME=&quot;Ubuntu 14.04.6 LTS&quot;
+VERSION_ID=&quot;14.04&quot;
+HOME_URL=&quot;http://www.ubuntu.com/&quot;
+SUPPORT_URL=&quot;http://help.ubuntu.com/&quot;
+BUG_REPORT_URL=&quot;http://bugs.launchpad.net/ubuntu/&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="fetching-images-from-the-web">
+<h2>Fetching images from the web<a class="headerlink" href="#fetching-images-from-the-web" title="Permalink to this headline">¶</a></h2>
+<p>As mentioned above, we fetch images on the login node. We cannot do this step
+inside a job script because compute nodes cannot access the web.</p>
+<p>You can fetch an image from https://singularity-hub.org/:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ singularity pull --name hello-world.sif shub://vsoch/hello-world
+</pre></div>
+</div>
+<p>Or from https://cloud.sylabs.io/library:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ singularity pull --name alpine.sif library://alpine:latest
+</pre></div>
+</div>
+<p>Or from https://hub.docker.com/:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ singularity pull --name alpine.sif docker://alpine:latest
+</pre></div>
+</div>
+<p>Or https://quay.io/:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ singularity pull --name openmpi-i8.sif docker://quay.io/bast/openmpi-i8:4.0.4-gcc-9.3.0
+</pre></div>
+</div>
+</div>
+<div class="section" id="mpi-example">
+<h2>MPI example<a class="headerlink" href="#mpi-example" title="Permalink to this headline">¶</a></h2>
+<p>Here we will try a bit more advanced example. First we will create a container
+from a definition file, then we will try to run the container on multiple
+nodes.</p>
+<div class="section" id="creating-a-singularity-container-from-a-definition-file">
+<h3>Creating a Singularity container from a definition file<a class="headerlink" href="#creating-a-singularity-container-from-a-definition-file" title="Permalink to this headline">¶</a></h3>
+<p><strong>We do this step on our own laptop/computer, not on the cluster</strong>.
+This is because Singularity needs root rights to build the container.
+We will later
+upload the generated container file to the cluster.</p>
+<p>You need to have Singularity installed on your laptop for this to work
+(follow e.g. https://sylabs.io/guides/3.3/user-guide/installation.html).</p>
+<p>We start with the following definitions file (<code class="docutils literal notranslate"><span class="pre">example.def</span></code>; this is a simplified
+version based on the example in https://sylabs.io/guides/3.3/user-guide/mpi.html):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Bootstrap: docker
+From: ubuntu:latest
+
+%environment
+    export OMPI_DIR=/opt/ompi
+
+%post
+    apt-get update &amp;&amp; apt-get install -y wget git bash gcc gfortran g++ make file
+    export OMPI_DIR=/opt/ompi
+    export OMPI_VERSION=4.0.1
+    export OMPI_URL=&quot;https://download.open-mpi.org/release/open-mpi/v4.0/openmpi-$OMPI_VERSION.tar.bz2&quot;
+    mkdir -p /tmp/ompi
+    mkdir -p /opt
+    cd /tmp/ompi &amp;&amp; wget -O openmpi-$OMPI_VERSION.tar.bz2 $OMPI_URL &amp;&amp; tar -xjf openmpi-$OMPI_VERSION.tar.bz2
+    cd /tmp/ompi/openmpi-$OMPI_VERSION &amp;&amp; ./configure --prefix=$OMPI_DIR &amp;&amp; make install
+</pre></div>
+</div>
+<p>From this we build a container (we are still on the laptop, not on the cluster):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo singularity build example.sif example.def
+</pre></div>
+</div>
+<p>This takes a couple of minutes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">...</span> <span class="n">lots</span> <span class="n">of</span> <span class="n">output</span> <span class="o">...</span><span class="p">]</span>
+
+<span class="n">INFO</span><span class="p">:</span>    <span class="n">Adding</span> <span class="n">environment</span> <span class="n">to</span> <span class="n">container</span>
+<span class="n">INFO</span><span class="p">:</span>    <span class="n">Creating</span> <span class="n">SIF</span> <span class="n">file</span><span class="o">...</span>
+<span class="n">INFO</span><span class="p">:</span>    <span class="n">Build</span> <span class="n">complete</span><span class="p">:</span> <span class="n">example</span><span class="o">.</span><span class="n">sif</span>
+</pre></div>
+</div>
+<p>Once <code class="docutils literal notranslate"><span class="pre">example.sif</span></code> is generated, we can <code class="docutils literal notranslate"><span class="pre">scp</span></code>
+the container file to the cluster.</p>
+</div>
+<div class="section" id="running-the-container-on-multiple-nodes">
+<h3>Running the container on multiple nodes<a class="headerlink" href="#running-the-container-on-multiple-nodes" title="Permalink to this headline">¶</a></h3>
+<p>We assume that we have the container file <code class="docutils literal notranslate"><span class="pre">example.sif</span></code> from the step before on
+the cluster.  We will also fetch <code class="docutils literal notranslate"><span class="pre">mpi_hello_world.c</span></code> from
+https://mpitutorial.com/tutorials/mpi-hello-world/.</p>
+<p>We are ready to test it out with the following job script on Saga (adjust
+“myaccount”; on Fram/Betzy you will need to remove the line containing <code class="docutils literal notranslate"><span class="pre">#SBATCH</span> <span class="pre">--mem-per-cpu=1000M</span></code> but the rest should work as is):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --account=myaccount</span>
+<span class="c1">#SBATCH --job-name=singularity-test</span>
+<span class="c1">#SBATCH --nodes=4</span>
+<span class="c1">#SBATCH --ntasks-per-node=4</span>
+<span class="c1">#SBATCH --mem-per-cpu=1000M</span>
+<span class="c1">#SBATCH --time=00:03:00</span>
+
+singularity <span class="nb">exec</span> example.sif /opt/ompi/bin/mpirun --version
+singularity <span class="nb">exec</span> example.sif /opt/ompi/bin/mpicc mpi_hello_world.c
+
+module purge
+module load foss/2020a
+
+mpirun --bind-to core -n <span class="si">${</span><span class="nv">SLURM_NTASKS</span><span class="si">}</span> singularity <span class="nb">exec</span> example.sif ./a.out
+</pre></div>
+</div>
+<p>The interesting part of the output is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mpirun</span> <span class="p">(</span><span class="n">Open</span> <span class="n">MPI</span><span class="p">)</span> <span class="mf">4.0</span><span class="o">.</span><span class="mi">1</span>
+
+<span class="p">[</span><span class="o">...</span><span class="p">]</span>
+
+<span class="n">Hello</span> <span class="n">world</span> <span class="kn">from</span> <span class="nn">processor</span> <span class="n">c2</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="n">rank</span> <span class="mi">2</span> <span class="n">out</span> <span class="n">of</span> <span class="mi">16</span> <span class="n">processors</span>
+<span class="n">Hello</span> <span class="n">world</span> <span class="kn">from</span> <span class="nn">processor</span> <span class="n">c2</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="n">rank</span> <span class="mi">3</span> <span class="n">out</span> <span class="n">of</span> <span class="mi">16</span> <span class="n">processors</span>
+<span class="n">Hello</span> <span class="n">world</span> <span class="kn">from</span> <span class="nn">processor</span> <span class="n">c2</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="n">rank</span> <span class="mi">0</span> <span class="n">out</span> <span class="n">of</span> <span class="mi">16</span> <span class="n">processors</span>
+<span class="n">Hello</span> <span class="n">world</span> <span class="kn">from</span> <span class="nn">processor</span> <span class="n">c2</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="n">rank</span> <span class="mi">1</span> <span class="n">out</span> <span class="n">of</span> <span class="mi">16</span> <span class="n">processors</span>
+<span class="n">Hello</span> <span class="n">world</span> <span class="kn">from</span> <span class="nn">processor</span> <span class="n">c2</span><span class="o">-</span><span class="mi">21</span><span class="p">,</span> <span class="n">rank</span> <span class="mi">14</span> <span class="n">out</span> <span class="n">of</span> <span class="mi">16</span> <span class="n">processors</span>
+<span class="n">Hello</span> <span class="n">world</span> <span class="kn">from</span> <span class="nn">processor</span> <span class="n">c2</span><span class="o">-</span><span class="mi">21</span><span class="p">,</span> <span class="n">rank</span> <span class="mi">13</span> <span class="n">out</span> <span class="n">of</span> <span class="mi">16</span> <span class="n">processors</span>
+<span class="n">Hello</span> <span class="n">world</span> <span class="kn">from</span> <span class="nn">processor</span> <span class="n">c2</span><span class="o">-</span><span class="mi">21</span><span class="p">,</span> <span class="n">rank</span> <span class="mi">12</span> <span class="n">out</span> <span class="n">of</span> <span class="mi">16</span> <span class="n">processors</span>
+<span class="n">Hello</span> <span class="n">world</span> <span class="kn">from</span> <span class="nn">processor</span> <span class="n">c2</span><span class="o">-</span><span class="mi">21</span><span class="p">,</span> <span class="n">rank</span> <span class="mi">15</span> <span class="n">out</span> <span class="n">of</span> <span class="mi">16</span> <span class="n">processors</span>
+<span class="n">Hello</span> <span class="n">world</span> <span class="kn">from</span> <span class="nn">processor</span> <span class="n">c2</span><span class="o">-</span><span class="mi">18</span><span class="p">,</span> <span class="n">rank</span> <span class="mi">8</span> <span class="n">out</span> <span class="n">of</span> <span class="mi">16</span> <span class="n">processors</span>
+<span class="n">Hello</span> <span class="n">world</span> <span class="kn">from</span> <span class="nn">processor</span> <span class="n">c2</span><span class="o">-</span><span class="mi">18</span><span class="p">,</span> <span class="n">rank</span> <span class="mi">11</span> <span class="n">out</span> <span class="n">of</span> <span class="mi">16</span> <span class="n">processors</span>
+<span class="n">Hello</span> <span class="n">world</span> <span class="kn">from</span> <span class="nn">processor</span> <span class="n">c2</span><span class="o">-</span><span class="mi">18</span><span class="p">,</span> <span class="n">rank</span> <span class="mi">9</span> <span class="n">out</span> <span class="n">of</span> <span class="mi">16</span> <span class="n">processors</span>
+<span class="n">Hello</span> <span class="n">world</span> <span class="kn">from</span> <span class="nn">processor</span> <span class="n">c2</span><span class="o">-</span><span class="mi">18</span><span class="p">,</span> <span class="n">rank</span> <span class="mi">10</span> <span class="n">out</span> <span class="n">of</span> <span class="mi">16</span> <span class="n">processors</span>
+<span class="n">Hello</span> <span class="n">world</span> <span class="kn">from</span> <span class="nn">processor</span> <span class="n">c2</span><span class="o">-</span><span class="mi">11</span><span class="p">,</span> <span class="n">rank</span> <span class="mi">6</span> <span class="n">out</span> <span class="n">of</span> <span class="mi">16</span> <span class="n">processors</span>
+<span class="n">Hello</span> <span class="n">world</span> <span class="kn">from</span> <span class="nn">processor</span> <span class="n">c2</span><span class="o">-</span><span class="mi">11</span><span class="p">,</span> <span class="n">rank</span> <span class="mi">4</span> <span class="n">out</span> <span class="n">of</span> <span class="mi">16</span> <span class="n">processors</span>
+<span class="n">Hello</span> <span class="n">world</span> <span class="kn">from</span> <span class="nn">processor</span> <span class="n">c2</span><span class="o">-</span><span class="mi">11</span><span class="p">,</span> <span class="n">rank</span> <span class="mi">7</span> <span class="n">out</span> <span class="n">of</span> <span class="mi">16</span> <span class="n">processors</span>
+<span class="n">Hello</span> <span class="n">world</span> <span class="kn">from</span> <span class="nn">processor</span> <span class="n">c2</span><span class="o">-</span><span class="mi">11</span><span class="p">,</span> <span class="n">rank</span> <span class="mi">5</span> <span class="n">out</span> <span class="n">of</span> <span class="mi">16</span> <span class="n">processors</span>
+</pre></div>
+</div>
+<p>Looks like it’s working!</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="appguides.html" class="btn btn-neutral float-right" title="Application guides" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="userinstallsw/python.html" class="btn btn-neutral float-left" title="Installing Python packages" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, Sigma2/Metacenter.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

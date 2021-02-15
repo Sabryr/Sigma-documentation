@@ -1,0 +1,374 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Installing Python packages &mdash; Sigma2 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/sigma2.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Running Singularity and Docker containers" href="../containers.html" />
+    <link rel="prev" title="Installing software with EasyBuild" href="easybuild.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Sigma2/Metacenter documentation
+          
+
+          
+            
+            <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">News</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://opslog.sigma2.no">Latest changes and events</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.sigma2.no/hardware-status">Hardware live status</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Getting help</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_help/support_line.html">Support line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_help/how_to_write_good_support_requests.html">Writing good support requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_help/qa-sessions.html">Open Question &amp; Answer Sessions for All Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_help/lost_forgotten_password.html">Lost or expiring password</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_help/project_leader_support.html">Project leader support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_help/advanced_user_support.html">Advanced User Support (AUS)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/applying_account.html">How do I get an HPC account?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/applying_resources.html">Applying for computing and storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/training.html">Training material</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/editing_files.html">Editing files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/create_ssh_keys.html">SSH</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../nird_archive/user-guide.html">Research data archive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../nird_toolkit/overview.html">NIRD Toolkit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../services/easydmp-user-documentation.html">EasyDMP User Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_help/course_resources.html">CRaaS - Course Resources as a Service</a></li>
+</ul>
+<p class="caption"><span class="caption-text">High-performance computing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc_machines/hardware_overview.html">Overview over our machines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc_machines/betzy.html">Betzy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc_machines/fram.html">Fram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc_machines/saga.html">Saga</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://hpc-uit.readthedocs.io">Stallo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc_machines/migration2metacenter.html">Migration to a Metacenter HPC machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jobs/overview.html">Job types and job scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../code_development/overview.html">Code development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../computing/tuning-applications.html">Tuning applications</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Software</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../modulescheme.html">Software Module Scheme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installed_software.html">Installed Software</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../userinstallsw.html">Installing software as user</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="easybuild.html">Installing software with EasyBuild</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Installing Python packages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#using-the-virtual-environment-in-a-batch-script">Using the virtual environment in a batch script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-anaconda-and-miniconda-in-batch">Using Anaconda and Miniconda in batch</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../containers.html">Running Singularity and Docker containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appguides.html">Application guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../licenses.html">Licenses and access policies</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Files and Storage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../files_storage/nird.html">NIRD - National Infrastructure for Research Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files_storage/clusters.html">Storage areas on HPC clusters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files_storage/backup.html">Backup on Betzy, Fram, Saga, and NIRD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files_storage/sharing_files.html">Data handling and storage policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files_storage/file_transfer.html">File transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files_storage/performance.html">Storage performance tuning</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Sigma2/Metacenter documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../userinstallsw.html">Installing software as user</a> &raquo;</li>
+        
+      <li>Installing Python packages</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/UNINETTSigma2/documentation/blob/master/software/userinstallsw/python.md" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installing-python-packages">
+<h1>Installing Python packages<a class="headerlink" href="#installing-python-packages" title="Permalink to this headline">¶</a></h1>
+<p>Users can install Python packages in a virtual Python environment. Here is how
+you create a virtual environment with the command <code class="docutils literal notranslate"><span class="pre">virtualenv</span></code>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create the virtual environment.</span>
+virtualenv my_new_pythonenv
+<span class="c1"># Activate the environment.</span>
+<span class="nb">source</span> my_new_pythonenv/bin/activate
+<span class="c1"># Install packages with pip. Here we install pandas.</span>
+pip install pandas
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When running software from your Python environment in a batch script, it is
+<em>highly</em> recommended to activate the environment <em>only</em> in the script (see
+below), while keeping the login environment clean when submitting the job,
+otherwise the environments can interfere with each other (even if they are the
+same).</p>
+</div>
+<div class="section" id="using-the-virtual-environment-in-a-batch-script">
+<h2>Using the virtual environment in a batch script<a class="headerlink" href="#using-the-virtual-environment-in-a-batch-script" title="Permalink to this headline">¶</a></h2>
+<p>In a batch script you will activate the virtual environment in the same way as
+above. You must just load the python module first:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Set up job environment
+set -o errexit # exit on any error
+set -o nounset # treat unset variables as error
+
+# Load modules
+module load Python/3.7.2-GCCcore-8.2.0
+
+# Set the ${PS1} (needed in the source of the virtual environment for some Python versions)
+export PS1=\$
+
+# activate the virtual environment
+source my_new_pythonenv/bin/activate
+
+# execute example script
+python pdexample.py
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-anaconda-and-miniconda-in-batch">
+<h2>Using Anaconda and Miniconda in batch<a class="headerlink" href="#using-anaconda-and-miniconda-in-batch" title="Permalink to this headline">¶</a></h2>
+<p>An alternative to creating virtual environments with virtualenv, is to create
+environment with Anaconda or Miniconda. To able to use the conda
+environment in a batch script, you will need to source a conda environment
+file. First create a environment, here also installing pandas:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># load Anaconda3</span>
+<span class="n">module</span> <span class="n">load</span> <span class="n">Anaconda3</span><span class="o">/</span><span class="mf">2019.03</span>
+
+<span class="c1"># install pandas as part of creating the environment</span>
+<span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">t</span> <span class="n">testenv</span> <span class="n">pandas</span>
+
+<span class="c1"># activate the environment</span>
+<span class="n">conda</span> <span class="n">activate</span> <span class="n">testenv</span>
+</pre></div>
+</div>
+<p>If you are planning on adding many libraries to your environment, you should
+consider placing it in a directory other than your $HOME, due to the
+<a class="reference internal" href="../../files_storage/clusters.html#clusters-homedirectory"><span class="std std-ref">storage restrictions</span></a> on that folder. One
+alternative could be to use the <a class="reference internal" href="../../files_storage/clusters.html#project-area"><span class="std std-ref">Project area</span></a>, please
+check out <a class="reference internal" href="../../files_storage/clusters.html#clusters-overview"><span class="std std-ref">Storage areas on HPC clusters</span></a> for other
+alternatives. To install conda in an alternative location, add
+<code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">/path/to/new/directory</span></code> to the create environment command, e.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">new</span><span class="o">/</span><span class="n">directory</span>
+</pre></div>
+</div>
+<p>To be able to use this environment in a batch script, you will need to include
+the following in your batch script, before calling the python program:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># load the Anaconda3
+module load Anaconda3/2019.03
+
+# Set the ${PS1} (needed in the source of the Anaconda environment)
+export PS1=\$
+
+# Source the conda environment setup
+# The variable ${EBROOTANACONDA3} comes with the
+# module load command
+source ${EBROOTANACONDA3}/etc/profile.d/conda.sh
+
+# Deactivate any spill-over environment from the login node
+conda deactivate &amp;&gt;/dev/null
+
+# Activate the environment by using the full path (not name)
+# to the environment. The full path is listed if you do
+# conda info --envs at the command prompt.
+conda activate /cluster/home/rnl/anaconda3/envs/testenv
+
+# Execute the python program
+python pdexample.py
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../containers.html" class="btn btn-neutral float-right" title="Running Singularity and Docker containers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="easybuild.html" class="btn btn-neutral float-left" title="Installing software with EasyBuild" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, Sigma2/Metacenter.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
